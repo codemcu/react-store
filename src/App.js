@@ -10,8 +10,10 @@ function App() {
   return (
     <div className="app grid">
       <Header />
-      <Filter />
-      <Main />
+      <div className="container">
+        <Filter />
+        <Main />
+      </div>
     </div>
   );
 }
