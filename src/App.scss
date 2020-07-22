@@ -27,7 +27,7 @@ header {
 .grid {
   display: grid;
   min-height: 100vh;
-  grid-template-rows: 4rem 1fr;
+  grid-template-rows: 3rem 8rem 1fr;
 }
 
 .container {
@@ -35,6 +35,27 @@ header {
   margin-left: auto;
   margin-right: auto;
   padding: 0 15px;
+}
+
+.filters {
+  display: flex;
+  justify-content: flex-end;
+
+  ul {
+    padding-left: 0;
+    display: flex;
+
+    li {
+      background-color: #e2e2e2;
+      list-style-type: none;
+      margin: 0 10px;
+
+      img {
+        width: 100px;
+        transform: rotateY(180deg);
+      }
+    }
+  }
 }
 
 @media (min-width: 1200px) {
