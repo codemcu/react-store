@@ -49,12 +49,43 @@ header {
       background-color: #e2e2e2;
       list-style-type: none;
       margin: 0 10px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      padding: 15px;
 
       img {
         width: 100px;
         transform: rotateY(180deg);
       }
+
+      div {
+        position: absolute;
+        top: 88%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
+  }
+}
+
+.filter-span {
+  display: none;
+}
+
+.sneakers-list {
+  .sneakers-list-th,
+  .sneakers-list-td {
+    display: grid;
+    grid-template-columns: 2rem 1fr 8rem 8rem;
+    background-color: #e2e2e2;
+    padding: 5px;
+  }
+  .sneakers-list-td {
+    background-color: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #e2e2e2;
   }
 }
 
