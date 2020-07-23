@@ -1,20 +1,13 @@
 import React from 'react';
+import FilterToggle from './FilterToggle';
 
 const Filter = () => {
-  const handleMouseOver = () => {};
-
   return (
     <div className="filters">
       <ul>
-        <li onMouseOver={handleMouseOver}>
-          <img src="/img/casual-removebg-preview.png" />
-        </li>
-        <li onMouseOver={handleMouseOver}>
-          <img src="/img/football-removebg-preview.png" />
-        </li>
-        <li onMouseOver={handleMouseOver}>
-          <img src="/img/running-removebg-preview.png" />
-        </li>
+        <FilterToggle img="/img/casual-removebg-preview.png" text="Casual" />
+        <FilterToggle img="/img/football-removebg-preview.png" text="Running" />
+        <FilterToggle img="/img/running-removebg-preview.png" text="Football" />
       </ul>
     </div>
   );
