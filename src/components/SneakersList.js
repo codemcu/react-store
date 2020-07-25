@@ -3,7 +3,7 @@ import { ProductContext } from './../context/ProductContext';
 import Sneaker from './Sneaker';
 
 const SneakersList = () => {
-  const { products, dispatch } = useContext(ProductContext);
+  const { state, dispatch } = useContext(ProductContext);
 
   return (
     <div className="sneakers-list">
@@ -13,8 +13,8 @@ const SneakersList = () => {
         <div>Sizes</div>
         <div>Price</div>
       </div>
-      {products.products &&
-        products.products.map((sneaker, index) => (
+      {state.products &&
+        state.products.map((sneaker, index) => (
           <Sneaker sneaker={sneaker} key={index} />
         ))}
     </div>
