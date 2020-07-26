@@ -90,6 +90,18 @@ header {
   .sneakers-list-name {
     text-align: left;
   }
+  .sneakers-list-total {
+    display: flex;
+    justify-content: flex-end;
+    margin: 35px;
+
+    .sneakers-list-total-text {
+      margin-right: 10px;
+    }
+    .sneakers-list-total-number {
+      font-weight: 800;
+    }
+  }
 }
 
 @media (min-width: 576px) {

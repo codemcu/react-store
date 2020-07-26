@@ -6,9 +6,22 @@ export const ProductContext = createContext();
 const initialState = {
   products: [],
   cart: [],
+  total: 0,
 };
 
 const reducer = (state = initialState, action) => {
+  const updateCart = (newProducts) => {
+    return newProducts.reduce(
+      (accumulator, current) =>
+        accumulator + parseFloat(replaceComa(current.price)),
+      0
+    );
+  };
+
+  const replaceComa = (string) => {
+    return string.replace(',', '.');
+  };
+
   const isCheched = (newProduct) => {
     const founded = state.cart.filter(
       (product) => product.ref === newProduct.ref
@@ -17,14 +30,19 @@ const reducer = (state = initialState, action) => {
       const filtered = state.cart.filter(
         (product) => product.ref !== newProduct.ref
       );
+      const sum = updateCart(filtered);
       return {
         ...state,
         cart: filtered,
+        total: sum.toFixed(2),
       };
     } else {
+      const newProducts = [...state.cart, newProduct];
+      const sum = updateCart(newProducts);
       return {
         ...state,
         cart: [...state.cart, newProduct],
+        total: sum.toFixed(2),
       };
     }
   };

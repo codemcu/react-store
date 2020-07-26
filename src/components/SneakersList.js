@@ -17,6 +17,12 @@ const SneakersList = () => {
         state.products.map((sneaker, index) => (
           <Sneaker sneaker={sneaker} key={index} />
         ))}
+      {state.cart && state.cart.length ? (
+        <div className="sneakers-list-total">
+          <div className="sneakers-list-total-text">Total Amount:</div>
+          <div className="sneakers-list-total-number">{state.total}€</div>
+        </div>
+      ) : null}
     </div>
   );
 };
